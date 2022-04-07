@@ -8,12 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @State private var brain: CalculatorBrain = .left("0")
+    
     var body: some View {
         VStack(spacing: 12){
             Spacer()
-            Text("0")
+            Text(brain.output)
                 .font(.system(size: 76))
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
+            Button {
+                self.brain = brain.apply(item: CalculatorButtonItem.digit(8))
+            } label: {
+                Text("sldkfj ")
+            }
             CalculatorButtonPad()
                 .padding(.bottom)
         }
