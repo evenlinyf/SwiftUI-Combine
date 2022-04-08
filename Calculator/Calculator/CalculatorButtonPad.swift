@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CalculatorButtonPad: View {
     
+    @Binding var brain: CalculatorBrain
+    
     let pad: [[CalculatorButtonItem]] = [
     [.command(.clear), .command(.flip), .command(.percent), .op(.divide)],
     [.digit(7), .digit(8), .digit(9), .op(.multiply)],
@@ -21,7 +23,7 @@ struct CalculatorButtonPad: View {
     var body: some View {
         VStack(spacing: 8) {
             ForEach(pad, id: \.self) { item in
-                CalculatorButtonRow(row: item)
+                CalculatorButtonRow(brain: $brain, row: item)
             }
         }
     }

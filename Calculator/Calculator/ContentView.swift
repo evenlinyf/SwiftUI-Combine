@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State private var brain: CalculatorBrain = .left("0")
+    @State var brain: CalculatorBrain
     
     var body: some View {
         VStack(spacing: 12){
@@ -17,12 +17,7 @@ struct ContentView: View {
             Text(brain.output)
                 .font(.system(size: 76))
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
-            Button {
-                self.brain = brain.apply(item: CalculatorButtonItem.digit(8))
-            } label: {
-                Text("sldkfj ")
-            }
-            CalculatorButtonPad()
+            CalculatorButtonPad(brain: $brain)
                 .padding(.bottom)
         }
     }
@@ -30,8 +25,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .previewInterfaceOrientation(.portrait)
-//        ContentView().previewDevice("iPhone 8")
+        ContentView(brain: CalculatorBrain.left("0"))
     }
 }

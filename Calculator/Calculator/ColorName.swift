@@ -8,7 +8,7 @@
 import Foundation
 
 enum ColorName: String {
-    case opera = "operatorBg"
+    case opera = "OperatorBg"
     case command = "commandBg"
     case digit = "digitBg"
 }

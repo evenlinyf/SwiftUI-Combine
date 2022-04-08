@@ -18,7 +18,7 @@ struct CalculatorButton: View {
     
     var body: some View {
         Button {
-            
+            self.action()
         } label: {
             Text(title)
                 .font(.system(size: fontSize))
