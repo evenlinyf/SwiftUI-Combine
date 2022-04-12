@@ -9,15 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State var brain: CalculatorBrain
+//    @State var brain: CalculatorBrain
+    @ObservedObject var model = CalculatorModel()
     
     var body: some View {
         VStack(spacing: 12){
             Spacer()
-            Text(brain.output)
+            Text(model.brain.output)
                 .font(.system(size: 76))
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
-            CalculatorButtonPad(brain: $brain)
+            CalculatorButtonPad(brain: $model.brain)
                 .padding(.bottom)
         }
     }
@@ -25,6 +26,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(brain: CalculatorBrain.left("0"))
+        let model = CalculatorModel()
+        ContentView(model: model)
     }
 }
