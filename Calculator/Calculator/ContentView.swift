@@ -15,10 +15,14 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 12){
             Spacer()
+            Button("操作历程: \(model.history.count)") {
+                print(self.model.history.map{$0.title})
+            }
+            Spacer()
             Text(model.brain.output)
                 .font(.system(size: 76))
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
-            CalculatorButtonPad(brain: $model.brain)
+            CalculatorButtonPad(model: model)
                 .padding(.bottom)
         }
     }

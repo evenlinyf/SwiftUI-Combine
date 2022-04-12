@@ -10,12 +10,23 @@ import Combine
 
 class CalculatorModel: ObservableObject {
     
-    let objectWillChange = PassthroughSubject<Void, Never>()
+//    let objectWillChange = PassthroughSubject<Void, Never>()
     
-    var brain: CalculatorBrain = .left("0") {
-        willSet {
-            objectWillChange.send()
+    @Published var history: [CalculatorButtonItem] = []
+    
+    @Published var brain: CalculatorBrain = .left("0")
+    
+    func applyItem(_ item: CalculatorButtonItem) {
+        self.brain = self.brain.apply(item: item)
+        self.history.append(item)
+        if item.title == "AC" {
+            self.history.removeAll()
         }
     }
+//    {
+//        willSet {
+//            objectWillChange.send()
+//        }
+//    }
     
 }

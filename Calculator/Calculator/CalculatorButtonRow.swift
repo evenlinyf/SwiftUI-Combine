@@ -10,7 +10,9 @@ import SwiftUI
 
 struct CalculatorButtonRow: View {
     
-    @Binding var brain: CalculatorBrain
+//    @Binding var brain: CalculatorBrain
+    
+    var model: CalculatorModel
     
     let row: [CalculatorButtonItem]
     
@@ -18,7 +20,7 @@ struct CalculatorButtonRow: View {
         HStack {
             ForEach(row, id: \.self) { item in
                 CalculatorButton(title: item.title, size: item.size, backgroundColorName: item.backgroundColorName) {
-                    self.brain = self.brain.apply(item: item)
+                    self.model.applyItem(item)
                 }
             }
         }
