@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		962F0E202809C55400317095 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F0E1F2809C55400317095 /* HistoryView.swift */; };
 		96DA740827EC1D4A001A8E9B /* CalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA740727EC1D4A001A8E9B /* CalculatorApp.swift */; };
 		96DA740A27EC1D4A001A8E9B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA740927EC1D4A001A8E9B /* ContentView.swift */; };
 		96DA740C27EC1D51001A8E9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96DA740B27EC1D51001A8E9B /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		962F0E1F2809C55400317095 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		96DA740427EC1D4A001A8E9B /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96DA740727EC1D4A001A8E9B /* CalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorApp.swift; sourceTree = "<group>"; };
 		96DA740927EC1D4A001A8E9B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				96DA740727EC1D4A001A8E9B /* CalculatorApp.swift */,
 				96DA740927EC1D4A001A8E9B /* ContentView.swift */,
 				96DEB2182805095A00A9512C /* CalculatorModel.swift */,
+				962F0E1F2809C55400317095 /* HistoryView.swift */,
 				D301806727FF20A200944F62 /* CalculatorBrain.swift */,
 				D3CD5A7027FDD05E00DE79E9 /* CalculatorButtonPad.swift */,
 				D3CD5A6E27FDCDD800DE79E9 /* CalculatorButtonRow.swift */,
@@ -165,6 +168,7 @@
 				D3CD5A6F27FDCDD800DE79E9 /* CalculatorButtonRow.swift in Sources */,
 				96DA740827EC1D4A001A8E9B /* CalculatorApp.swift in Sources */,
 				96DEB2192805095A00A9512C /* CalculatorModel.swift in Sources */,
+				962F0E202809C55400317095 /* HistoryView.swift in Sources */,
 				D301806827FF20A200944F62 /* CalculatorBrain.swift in Sources */,
 				D3CD5A7127FDD05E00DE79E9 /* CalculatorButtonPad.swift in Sources */,
 			);
