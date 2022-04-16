@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
 
+    @State private var editingHistory = false
+    
 //    @State var brain: CalculatorBrain
     @ObservedObject var model = CalculatorModel()
     
@@ -16,7 +18,10 @@ struct ContentView: View {
         VStack(spacing: 12){
             Spacer()
             Button("操作历程: \(model.history.count)") {
+                self.editingHistory = true
                 print(self.model.history.map{$0.title})
+            }.sheet(isPresented: self.$editingHistory) {
+                HistoryView(model: self.model)
             }
             Spacer()
             Text(model.brain.output)
