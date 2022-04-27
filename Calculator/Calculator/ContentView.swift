@@ -12,7 +12,8 @@ struct ContentView: View {
     @State private var editingHistory = false
     
 //    @State var brain: CalculatorBrain
-    @ObservedObject var model = CalculatorModel()
+//    @ObservedObject var model = CalculatorModel()
+    @EnvironmentObject var model: CalculatorModel
     
     var body: some View {
         VStack(spacing: 12){
@@ -27,7 +28,7 @@ struct ContentView: View {
             Text(model.brain.output)
                 .font(.system(size: 76))
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
-            CalculatorButtonPad(model: model)
+            CalculatorButtonPad()
                 .padding(.bottom)
         }
     }
@@ -36,6 +37,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let model = CalculatorModel()
-        ContentView(model: model)
+        ContentView().environmentObject(CalculatorModel())
     }
 }
